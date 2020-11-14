@@ -8,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'angular-app';
-  users = [];
+  users: Array<any> = [];
+  newUserName: string = ''
+  newUserAge: number = 0;
 
   constructor(
     private _http: HttpClient
@@ -19,5 +21,16 @@ export class AppComponent implements OnInit {
       console.log(data)
       this.users = data
     });
+  }
+
+  addUser() {
+    let user: any = new Object();
+    user.name = this.newUserName;
+    user.edad = this.newUserAge;
+
+    this.newUserName = '';
+    this.newUserAge = 0;
+
+    this.users.push(user)
   }
 }
