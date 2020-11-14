@@ -1,0 +1,8 @@
+/vendor
+/angular-app/node_modules
+/angular-app/e2e
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+.phpunit.result.cache
