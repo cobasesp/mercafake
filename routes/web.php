@@ -15,6 +15,10 @@ $router->get('/', function () use ($router) {
     return 'Hola mundo!';
 });
 
+$router->get('/phpinfo', function () use ($router) {
+    return phpinfo();
+});
+
 $router->get('/users', function () use ($router) {
     return response()->json([
         [
@@ -27,3 +31,6 @@ $router->get('/users', function () use ($router) {
         ]
     ]);
 });
+
+$router->get('/productos', ['as' => 'productos', 'uses' => 'ProductosController@index']);
+$router->get('/productos/{id}', ['as' => 'productos.show', 'uses' => 'ProductosController@show']);
