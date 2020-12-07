@@ -9,8 +9,19 @@ class Producto extends Model{
     protected $fillable = [
         'nombre',
         'precio',
-        'categoria'
+        'categoria',
+        'tipo',
+        'imagen'
     ];
 
+    public function categoria()
+    {
+        return $this->hasOne('App\Categoria', 'id');
+    }
+
+    public function tipo()
+    {
+        return $this->hasOne('App\Tipo', 'id');
+    }
 
 }
