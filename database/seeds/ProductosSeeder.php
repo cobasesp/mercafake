@@ -14,13 +14,15 @@ class ProductosSeeder extends Seeder
         \DB::table('productos')->insert([
             [
                 "nombre" => "naranjas",
+                "categoria" => App\Categoria::where('nombre', 'Frutas')->firstOrFail()->id,
                 "precio" => "0120",
-                "categoria" => "frutas"
+                "tipo" => App\Tipo::where('nombre', 'Kilo')->firstOrFail()->id,
             ],
             [
-                "nombre" => "cereales chocolate",
-                "precio" => "0095",
-                "categoria" => "cereales"
+                "nombre" => "cereales choco",
+                "categoria" => App\Categoria::where('nombre', 'Cereales')->firstOrFail()->id,
+                "precio" => "0110",
+                "tipo" => App\Tipo::where('nombre', 'Unidad')->firstOrFail()->id,
             ],
         ]);
     }
