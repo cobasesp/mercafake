@@ -32,5 +32,11 @@ $router->get('/users', function () use ($router) {
     ]);
 });
 
+//Productos
 $router->get('/productos', ['as' => 'productos', 'uses' => 'ProductosController@index']);
-$router->get('/productos/{id}', ['as' => 'productos.show', 'uses' => 'ProductosController@show']);
+$router->get('/productos/{nombre}', ['as' => 'productos.show', 'uses' => 'ProductosController@show']);
+$router->get('/productos/categoria/{nombre}', ['as' => 'productos.categoria', 'uses' => 'ProductosController@porCategoria']);
+
+//Categorias
+$router->get('/categorias', ['as' => 'categorias', 'uses' => 'CategoriasController@index']);
+$router->get('/categorias/{id}', ['as' => 'categorias.show', 'uses' => 'CategoriasController@show']);
