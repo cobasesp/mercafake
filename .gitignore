@@ -1,5 +1,6 @@
 /vendor
 /angular-app/node_modules
+/angular-app/dist
 /angular-app/e2e
 /.idea
 Homestead.json
