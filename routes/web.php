@@ -32,6 +32,9 @@ $router->get('/users', function () use ($router) {
     ]);
 });
 
+//Login 
+$router->post('/login', ['as' => 'login', 'uses' => 'LoginController@doLogin']);
+
 //Productos
 $router->get('/productos', ['as' => 'productos', 'uses' => 'ProductosController@index']);
 $router->get('/productos/{nombre}', ['as' => 'productos.show', 'uses' => 'ProductosController@show']);
