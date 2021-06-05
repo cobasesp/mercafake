@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
   title = 'angular-app';
   users: Array<any> = [];
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._http.get('http://mercafake.test/api/users').subscribe((data: any[]) => {
+    this._http.get(environment.api_url + 'users').subscribe((data: any[]) => {
       console.log(data)
       this.users = data
     });
