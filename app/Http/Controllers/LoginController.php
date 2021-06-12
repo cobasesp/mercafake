@@ -42,7 +42,7 @@ class LoginController extends Controller
             ];
 
             $jwt_obj = JWT::encode($obj, $secret);
-            return $this->jsonResponse(["error" => false, "msg" => "El token enviado es inválido", "token" => $jwt_obj], 200);
+            return $this->jsonResponse(["error" => false, "msg" => "Login correcto", "token" => $jwt_obj], 200);
         }
 
         return $this->jsonResponse(["error" => true, "msg" => "Usuario o contraseña incorrectos"], 200);
