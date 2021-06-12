@@ -1,0 +1,15 @@
+<div class="container">
+    Usuarios
+
+    <ul id="usuarios">
+        <li *ngFor="let user of users">Nombre: {{ user.name }}, edad {{ user.edad }} años</li>
+    </ul>
+
+    <div>
+        <p>Añadir usuario</p>
+        <input type="text" name="username" [(ngModel)]="newUserName">
+        <input type="text" name="userage" [(ngModel)]="newUserAge">
+        <button (click)="addUser()">Añadir usuario</button>
+    </div>
+
+</div>
